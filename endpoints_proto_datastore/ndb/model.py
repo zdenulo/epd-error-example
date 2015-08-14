@@ -1215,8 +1215,8 @@ class EndpointsModel(ndb.Model):
                         key=lambda field: field.number):
       name = field.name
       value = getattr(message, name, None)
-      # if value is None:
-      if value is None or value==[]:  # works ok
+      if value is None:
+      # if value is None or value==[]:  # works ok
         continue
 
       value_property = _VerifyProperty(cls, name)
